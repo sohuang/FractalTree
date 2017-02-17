@@ -3,6 +3,8 @@ private int smallestBranch = 10;
 private double branchAngle = .5;
 private float h, s, b;
 private float count;
+private float seed1 = 75;
+private float seed2 = 150;
 
 public void setup() {
 	size(640, 480);
@@ -14,7 +16,7 @@ public void setup() {
 public void draw() {
 	background(200);
 	h = map(noise(count), 0, 1, 0, 255);
-	s = map(noise(count), 0, 1, 0, 255);
+	s = map(noise(count), 0, 1, 255, 0);
 	b = map(noise(count), 0, 1, 100, 255);
 	stroke(h, s, b);
 	line(320, 480, 320, 380);
@@ -23,9 +25,14 @@ public void draw() {
 
 public void drawBranches(int x, int y, double branchLength, double angle) {
 	count += 0.000001;
+	seed1 += 0.000005;
+	seed2 += 0.000008;
 
-	double angle1 = angle + branchAngle;
-	double angle2 = angle - branchAngle;
+	// double angle1 = angle + branchAngle;
+	// double angle2 = angle - branchAngle;
+
+	double angle1 = angle + noise(seed1);
+	double angle2 = angle - noise(seed2);
 
 	branchLength *= fractionLength;
 
