@@ -3,15 +3,15 @@
     src: url("Happy New One.ttf");
 }
 
-@font-face {
+/*@font-face {
     font-family: colporteurFont;
     src: url("DK Colporteur Fat.otf");
-}
+}*/
 
 body {
     background-color: rgb(200,200,200);
     color: rgb(0,0,0);
-    font-family: "Open Sans", sans-serif;
+    font-family: happyFont, "Open Sans", sans-serif;
     text-align: center;
 }
 
@@ -22,13 +22,10 @@ body {
 }
 
 header {
-    font-family: happyFont;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 footer {
-    font-family: colporteurFont;
-	/*font-style: italic;*/
+	font-style: italic;
 	/*font-size: 90%;*/
-    font-size: 20px;
 }
